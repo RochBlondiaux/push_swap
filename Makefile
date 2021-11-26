@@ -36,10 +36,10 @@ SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
 # Libft
-FT		= ./srcs/libft/
+FT		= ./libft/
 FT_LIB	= $(addprefix $(FT),libft.a)
-FT_INC	= -I ./srcs/libft
-FT_LNK	= -L ./srcs/libft -l ft
+FT_INC	= -I ./libft
+FT_LNK	= -L ./libft -l ft
 
 # Flags
 CC = gcc $(CFLAGS)
