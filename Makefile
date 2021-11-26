@@ -26,9 +26,7 @@ OBJ_PATH = ./objs/
 INCDIR = includes
 
 # Name
-SRC_NAME =	main.c
-
-
+SRC_NAME = main.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 # Files
