@@ -1,0 +1,3 @@
+[submodule "libft"]
+	path = /srcs/libft
+	url = https://github.com/RochBlondiaux/libft
