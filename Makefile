@@ -33,6 +33,7 @@ SRC_NAME = main.c \
 			elements/new_element.c \
 			elements/clear_elements.c \
 			operations/swap.c \
+			operations/push.c \
 			utils/element_utils.c \
 			utils/utils.c
 		

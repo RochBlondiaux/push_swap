@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:50:47 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 15:50:01 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:15:04 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	print_stack(t_element *stack)
 {
 	int	i;
 
-	printf("====================\n");
-	printf("Stack:\n");
+	printf("=======[STACK]=======\n");
 	i = 0;
 	while (stack)
 	{
@@ -25,7 +24,7 @@ void	print_stack(t_element *stack)
 		i++;
 		stack = stack->next;
 	}
-	printf("====================\n");
+	printf("=======[STACK]=======\n\n");
 }
 
 int	main(int argc, char **argv)
@@ -35,11 +34,14 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
+	stack_b = NULL;
 	parse(&stack_a, argv, argc);
-	create_empty(&stack_b, element_size(stack_a));
+	//create_empty(&stack_b, element_size(stack_a));
 	print_stack(stack_a);
-	swap_both(&stack_a, &stack_b);
+	print_stack(stack_b);
+	push(&stack_a, &stack_b, 'b');
 	print_stack(stack_a);
+	print_stack(stack_b);
 	clear_elements(&stack_a, &stack_b);
 	return (0);
 }

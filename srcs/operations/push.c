@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_elements.c                                   :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 13:45:32 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 15:58:52 by rblondia         ###   ########.fr       */
+/*   Created: 2021/11/29 15:53:01 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/29 16:12:44 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	clear_elements(t_element **stack_a, t_element **stack_b)
+void	push(t_element **source, t_element **target, char name)
 {
 	t_element	*tmp;
+	t_element	*element;
 
-	if (*stack_a)
-	{
-		tmp = *stack_a;
-		while (*stack_a)
-		{
-			tmp = (*stack_a)->next;
-			free(*stack_a);
-			*stack_a = tmp;
-		}	
-	}
-	if (*stack_b)
-	{
-		tmp = *stack_b;
-		if (!tmp)
-			return ;
-		while (*stack_b)
-		{
-			tmp = (*stack_b)->next;
-			free(*stack_b);
-			*stack_b = tmp;
-		}	
-	}
+	if (!*source)
+		return ;
+	element = (*source)->next;
+	tmp = *source;
+	tmp->next = *target;
+	*target = tmp;
+	*source = element;
+	ft_putchar_fd('p', 1);
+	ft_putchar_fd(name, 1);
+	ft_putchar_fd('\n', 1);
 }
