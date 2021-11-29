@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:50:47 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 17:22:45 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:32:03 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	parse(&stack_a, argv, argc);
 	print_stack(stack_a);
-	rotate_silently(&stack_a);
+	reverse_rotate_silently(&stack_a);
 	print_stack(stack_a);
 	clear_elements(&stack_a, &stack_b);
 	return (0);
