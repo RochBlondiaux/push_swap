@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_element.c                                      :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 13:37:10 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 18:12:07 by rblondia         ###   ########.fr       */
+/*   Created: 2021/11/29 17:52:31 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/29 18:43:51 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_element	*get_element(t_element *lst, int index)
+void	sort(t_element **stack_a, t_element **stack_b)
 {
-	int	i;
-
-	i = 0;
-	while (lst->next)
-	{
-		if (i == index)
-			return (lst);
-		lst = lst->next;
-		i++;
-	}
-	return (NULL);
-}
-
-t_element	*get_last_element(t_element *lst)
-{
-	return (get_element(lst, element_size(lst)));
+	(void) stack_b;
 }

@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 17:36:56 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/29 18:12:12 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ typedef struct s_element {
 	struct s_element	*next;
 }						t_element;
 
+typedef struct s_pair
+{
+	int	a;
+	int	b;
+}		t_pair;
+
 /**
  * Elements operations
  */
@@ -40,6 +46,7 @@ void		rotate_both(t_element **stack_a, t_element **stack_b);
 void		reverse_rotate(t_element **stack, char stack_name);
 void		reverse_rotate(t_element **stack, char stack_name);
 void		reverse_rotate_both(t_element **stack_a, t_element **stack_b);
+void		sort(t_element **stack_a, t_element **stack_b);
 
 /**
  * Elements
@@ -49,6 +56,7 @@ t_element	*get_element(t_element *lst, int index);
 t_element	*new_element(int value, t_element *next);
 void		clear_elements(t_element **stack_a, t_element **stack_b);
 void		element_iter(t_list *lst, void (*f)(int));
+t_element	*get_last_element(t_element *lst);
 
 /**
  * Parsing
