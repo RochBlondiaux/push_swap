@@ -26,7 +26,15 @@ OBJ_PATH = ./objs/
 INCDIR = includes
 
 # Name
-SRC_NAME = main.c
+SRC_NAME = main.c \
+			parsing/parser.c \
+			elements/element_size.c \
+			elements/get_element.c \
+			elements/new_element.c \
+			elements/clear_elements.c \
+			utils/element_utils.c \
+			utils/utils.c
+		
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 # Files
@@ -49,8 +57,9 @@ all: obj $(FT_LIB) $(NAME)
 obj:
 	@echo "$(INFO)Creating objects folder... $(NOC)"
 	@mkdir -p $(OBJ_PATH)
-	@mkdir -p $(OBJ_PATH)/utils
 	@mkdir -p $(OBJ_PATH)/parsing
+	@mkdir -p $(OBJ_PATH)/elements
+	@mkdir -p $(OBJ_PATH)/utils
 	@echo "$(SUCCESS)Objects folder created successfully$(NOC)"
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.c
