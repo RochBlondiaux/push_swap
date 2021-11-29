@@ -32,6 +32,7 @@ SRC_NAME = main.c \
 			elements/get_element.c \
 			elements/new_element.c \
 			elements/clear_elements.c \
+			operations/swap.c \
 			utils/element_utils.c \
 			utils/utils.c
 		
@@ -59,6 +60,7 @@ obj:
 	@mkdir -p $(OBJ_PATH)
 	@mkdir -p $(OBJ_PATH)/parsing
 	@mkdir -p $(OBJ_PATH)/elements
+	@mkdir -p $(OBJ_PATH)/operations
 	@mkdir -p $(OBJ_PATH)/utils
 	@echo "$(SUCCESS)Objects folder created successfully$(NOC)"
 

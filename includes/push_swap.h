@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 14:50:17 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/29 15:49:11 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,18 @@ typedef struct s_element {
 }						t_element;
 
 /**
+ * Elements operations
+ */
+void		swap(t_element **stack, char stack_name);
+void		swap_both(t_element **stack_a, t_element **stack_b);
+
+/**
  * Elements
  */
 size_t		element_size(t_element *lst);
 t_element	*get_element(t_element *lst, int index);
 t_element	*new_element(int value, t_element *next);
-void		clear_elements(t_element **lst);
+void		clear_elements(t_element **stack_a, t_element **stack_b);
 void		element_iter(t_list *lst, void (*f)(int));
 
 /**
