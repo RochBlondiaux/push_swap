@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:50:47 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 16:15:04 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:22:45 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,9 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_b = NULL;
 	parse(&stack_a, argv, argc);
-	//create_empty(&stack_b, element_size(stack_a));
 	print_stack(stack_a);
-	print_stack(stack_b);
-	push(&stack_a, &stack_b, 'b');
+	rotate_silently(&stack_a);
 	print_stack(stack_a);
-	print_stack(stack_b);
 	clear_elements(&stack_a, &stack_b);
 	return (0);
 }

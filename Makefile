@@ -34,6 +34,7 @@ SRC_NAME = main.c \
 			elements/clear_elements.c \
 			operations/swap.c \
 			operations/push.c \
+			operations/rotate.c \
 			utils/element_utils.c \
 			utils/utils.c
 		

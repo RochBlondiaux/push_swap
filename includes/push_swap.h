@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 15:54:24 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:24:21 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_element {
 void		swap(t_element **stack, char stack_name);
 void		swap_both(t_element **stack_a, t_element **stack_b);
 void		push(t_element **source, t_element **target, char name);
+void		rotate(t_element **stack, char stack_name);
+void		rotate_both(t_element **stack_a, t_element **stack_b);
 
 /**
  * Elements
