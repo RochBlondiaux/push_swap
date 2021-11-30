@@ -65,8 +65,10 @@ void	create_new_element(char *a, t_element **lst)
 {
 	int	tmp;
 
+	if (!a || !a[0])
+		exit(-1);
 	tmp = ft_atoi(a);
-	if (tmp == 0 && (!a || a[0] != '0'))
+	if (tmp == 0 && (a[0] != '0'))
 		exit_error();
 	*lst = new_element(tmp, *lst);
 }

@@ -12,7 +12,7 @@ CYAN        = \033[1;36m
 WHITE       = \033[1;37m
 
 # SYMBOLS
-INFO = $(WHITE)[$(BLUE)ℹ️ $(WHITE)] 
+INFO = $(WHITE)[$(BLUE)ℹ️$(WHITE)]
 SUCCESS = $(WHITE)[$(GREEN)✅$(WHITE)] $(GREEN)
 WARNING = $(WHITE)[$(YELLOW)⚠️$(WHITE)] $(YELLOW)
 ERROR = $(WHITE)[$(RED)❌$(WHITE)] $(RED)

@@ -32,7 +32,7 @@ void	rotate_silently(t_element **stack)
 void	rotate(t_element **stack, char stack_name)
 {
 	rotate_silently(stack);
-	ft_putchar_fd('p', 1);
+	ft_putchar_fd('r', 1);
 	ft_putchar_fd(stack_name, 1);
 	ft_putchar_fd('\n', 1);
 }

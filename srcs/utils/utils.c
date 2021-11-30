@@ -30,12 +30,12 @@ void	print_stacks(t_element *stack_a, t_element *stack_b)
 		if (stack_a)
 			ft_putnbr_fd(stack_a->value, 1);
 		else
-			ft_putchar_fd(' ', 1);
-		ft_putchar_fd(' ', 1);
+			ft_putstr_fd("  ", 1);
+		ft_putstr_fd("  ", 1);
 		if (stack_b)
 			ft_putnbr_fd(stack_b->value, 2);
 		else
-			ft_putchar_fd(' ', 1);
+			ft_putstr_fd("  ", 1);
 		ft_putchar_fd('\n', 1);
 		i++;
 		if (stack_a)
@@ -43,5 +43,5 @@ void	print_stacks(t_element *stack_a, t_element *stack_b)
 		if (stack_b)
 			stack_b = stack_b->next;
 	}
-	ft_putstr_fd("_ _\na b\n", 1);
+	ft_putstr_fd("_  _\na  b\n", 1);
 }
