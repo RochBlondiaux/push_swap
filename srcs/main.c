@@ -12,21 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-void	print_stack(t_element *stack)
-{
-	int	i;
-
-	printf("=======[STACK]=======\n");
-	i = 0;
-	while (stack)
-	{
-		printf("#%d: %d\n", i, stack->value);
-		i++;
-		stack = stack->next;
-	}
-	printf("=======[STACK]=======\n\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_element	*stack_a;
@@ -36,9 +21,9 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_b = NULL;
 	parse(&stack_a, argv, argc);
-	print_stack(stack_a);
+	print_stacks(stack_a, stack_b);
 	sort(&stack_a, &stack_b);
-	print_stack(stack_a);
+	print_stacks(stack_a, stack_b);
 	clear_elements(&stack_a, &stack_b);
 	return (0);
 }

@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sorting_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 17:52:31 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 18:43:51 by rblondia         ###   ########.fr       */
+/*   Created: 2021/11/30 11:19:19 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/30 11:19:20 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort(t_element **stack_a, t_element **stack_b)
+int	is_sorted(t_element *stack)
 {
-	(void) stack_b;
+	int	last;
+
+	last = stack->value;
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value
+			|| last > stack->value)
+			return (0);
+		last = stack->value;
+		stack = stack->next;
+	}
+	return (1);
 }

@@ -37,18 +37,63 @@ void	check_data(t_element *lst)
 	}
 }
 
+int	strlen_(char **a)
+{
+	int	l;
+
+	l = 0;
+	while (l[a])
+		l++;
+	return (l);
+}
+
+int	contains_space(char *a)
+{
+	int	i;
+
+	i = 0;
+	while (a[i])
+	{
+		if (a[i] == ' ')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+void	create_new_element(char *a, t_element **lst)
+{
+	int	tmp;
+
+	tmp = ft_atoi(a);
+	if (tmp == 0 && (!a || a[0] != '0'))
+		exit_error();
+	*lst = new_element(tmp, *lst);
+}
+
 void	parse(t_element **lst, char **args, int argc)
 {
 	int			index;
-	int			tmp;
+	int			i;
+	char		**strs;
 
 	index = argc - 1;
 	while (index > 0)
 	{
-		tmp = ft_atoi(args[index]);
-		if (tmp == 0 && (!args[index] || args[index][0] != '0'))
-			exit_error();
-		*lst = new_element(tmp, *lst);
+		if (contains_space(args[index]))
+		{
+			strs = ft_split(args[index], ' ');
+			i = strlen_(strs) - 1;
+			while (i >= 0)
+			{
+				create_new_element(strs[i], lst);
+				free(strs[i]);
+				i--;
+			}
+			free(strs);
+		}
+		else
+			create_new_element(args[index], lst);
 		index--;
 	}
 	check_data(*lst);

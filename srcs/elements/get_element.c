@@ -17,7 +17,7 @@ t_element	*get_element(t_element *lst, int index)
 	int	i;
 
 	i = 0;
-	while (lst->next)
+	while (lst)
 	{
 		if (i == index)
 			return (lst);

@@ -22,18 +22,17 @@
 # include "../libft/libft.h"
 
 /**
+ * Constants
+ */
+# define DEBUG 0
+
+/**
  * Structures
  */
 typedef struct s_element {
 	int					value;
 	struct s_element	*next;
 }						t_element;
-
-typedef struct s_pair
-{
-	int	a;
-	int	b;
-}		t_pair;
 
 /**
  * Elements operations
@@ -66,7 +65,8 @@ void		parse(t_element **lst, char **args, int argc);
 /**
  * Utils
  */
-void		create_empty(t_element **lst, int size);
 void		exit_error(void);
+int			is_sorted(t_element *stack);
+void		print_stacks(t_element *stack_a, t_element *stack_b);
 
 #endif

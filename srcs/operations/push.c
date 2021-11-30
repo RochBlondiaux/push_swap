@@ -27,4 +27,8 @@ void	push(t_element **source, t_element **target, char name)
 	ft_putchar_fd('p', 1);
 	ft_putchar_fd(name, 1);
 	ft_putchar_fd('\n', 1);
+	if (name == 'a')
+		print_stacks(*target, *source);
+	else
+		print_stacks(*source, *target);
 }

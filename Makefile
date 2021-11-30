@@ -36,7 +36,8 @@ SRC_NAME = main.c \
 			operations/push.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c \
-			algorithm/sort.c \
+			sorting/sort.c \
+			utils/sorting_utils.c \
 			utils/element_utils.c \
 			utils/utils.c
 		
@@ -64,7 +65,7 @@ obj:
 	@mkdir -p $(OBJ_PATH)
 	@mkdir -p $(OBJ_PATH)/parsing
 	@mkdir -p $(OBJ_PATH)/elements
-	@mkdir -p $(OBJ_PATH)/algorithm
+	@mkdir -p $(OBJ_PATH)/sorting
 	@mkdir -p $(OBJ_PATH)/operations
 	@mkdir -p $(OBJ_PATH)/utils
 	@echo "$(SUCCESS)Objects folder created successfully$(NOC)"
