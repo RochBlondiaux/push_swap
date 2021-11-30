@@ -17,6 +17,7 @@ void	sort(t_element **stack_a, t_element **stack_b)
 	size_t		length;
 	size_t		i;
 	size_t		j;
+	int			k;
 
 	if (is_sorted(*stack_a))
 		return ;
@@ -27,7 +28,8 @@ void	sort(t_element **stack_a, t_element **stack_b)
 		j = 0;
 		while (j < length)
 		{
-			if ((*stack_a)->value >> i & 1)
+			k = (*stack_a)->value >> i;
+			if ((k & 1) == 1)
 				rotate(stack_a, 'a');
 			else
 				push(stack_a, stack_b, 'b');
