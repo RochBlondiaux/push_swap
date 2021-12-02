@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:52:31 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 14:53:29 by                  ###   ########.fr       */
+/*   Updated: 2021/12/02 16:39:46 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,19 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 	push(stack_a, stack_b, 'b');
 	push(stack_a, stack_b, 'b');
 	sort_3(stack_a);
-	if (get_top(*stack_b) > get_bottom(*stack_b))
+	if (get_top(*stack_b) < get_bottom(*stack_b))
 		swap(stack_b, 'b');
-	while (get_top(*stack_a) < get_top(*stack_b) && get_bottom(*stack_a) > get_top(*stack_b))
-		rotate(stack_a, 'a');
-	rotate(stack_a, 'a');
-	push(stack_b, stack_a, 'a');
-	while (get_top(*stack_a) < get_top(*stack_b) && get_bottom(*stack_a) > get_top(*stack_b))
-		rotate(stack_a, 'a');
-	rotate(stack_a, 'a');
-	push(stack_b, stack_a, 'a');
-	//while(!is_sorted(*stack_a))
-	//	rotate(stack_a, 'a');
-	/*
-	while (get_top(*stack_a) < get_top(*stack_b))
-		reverse_rotate(stack_a, 'a');
-	push(stack_b, stack_a, 'a');
-	*/
+
+	while ((get_top(*stack_b) < get_top(*stack_a)) && *stack_b)
+		push(stack_b, stack_a, 'b');
+	while (get_top(*stack_b) > get_bottom(*stack_a))
+	{
+		push(stack_b, stack_a, 'b');
+		while (!is_sorted(*stack_a))
+			rotate(stack_a, 'a');
+	}
+	if (*stack_b)
+		good_sort(stack_a, stack_b);
 }
 
 void    sort_100(t_element **stack_a, t_element **stack_b)

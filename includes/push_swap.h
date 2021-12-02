@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 14:37:55 by                  ###   ########.fr       */
+/*   Updated: 2021/12/02 16:41:43 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ int 		get_bigger(t_element *stack);
  * Parsing
  */
 void		parse(t_element **lst, char **args, int argc);
+
+/**
+ * Sorting
+ */
+void		good_sort(t_element **stack_a, t_element **stack_b);
 
 /**
  * Utils
