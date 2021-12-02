@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:53:46 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/29 15:05:13 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/02 18:26:15 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_data(t_element *lst)
 				count++;
 				if (count >= 2)
 					exit_error();
-			}	
+			}
 			tmp1 = tmp1->next;
 		}
 		tmp = tmp->next;
@@ -41,6 +41,8 @@ int	strlen_(char **a)
 {
 	int	l;
 
+	if (!a)
+		return (0);
 	l = 0;
 	while (l[a])
 		l++;

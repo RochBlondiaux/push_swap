@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	push(t_element **source, t_element **target, char name)
+void	push_silently(t_element **source, t_element **target)
 {
 	t_element	*tmp;
 	t_element	*element;
@@ -24,6 +24,11 @@ void	push(t_element **source, t_element **target, char name)
 	tmp->next = *target;
 	*target = tmp;
 	*source = element;
+}
+
+void	push(t_element **source, t_element **target, char name)
+{
+	push_silently(source, target);
 	ft_putchar_fd('p', 1);
 	ft_putchar_fd(name, 1);
 	ft_putchar_fd('\n', 1);

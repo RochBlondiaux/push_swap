@@ -12,13 +12,14 @@ CYAN        = \033[1;36m
 WHITE       = \033[1;37m
 
 # SYMBOLS
-INFO = $(WHITE)[$(BLUE)ℹ️$(WHITE)]
+INFO = $(WHITE)[$(BLUE)ℹ️$(WHITE)] $(NOP)
 SUCCESS = $(WHITE)[$(GREEN)✅$(WHITE)] $(GREEN)
 WARNING = $(WHITE)[$(YELLOW)⚠️$(WHITE)] $(YELLOW)
 ERROR = $(WHITE)[$(RED)❌$(WHITE)] $(RED)
 
 # Binary
 NAME=push_swap
+CHECKER_NAME=checker
 
 # Path
 SRC_PATH = ./srcs/
@@ -41,12 +42,34 @@ SRC_NAME = main.c \
 			utils/sorting_utils_1.c \
 			utils/element_utils.c \
 			utils/utils.c
-		
+
+CHECKER_SRCS = checker/checker.c \
+			parsing/parser.c \
+			elements/element_size.c \
+			elements/get_element.c \
+			elements/new_element.c \
+			elements/clear_elements.c \
+			operations/swap.c \
+			operations/push.c \
+			operations/rotate.c \
+			operations/reverse_rotate.c \
+			sorting/sort.c \
+			utils/sorting_utils.c \
+			utils/sorting_utils_1.c \
+			utils/element_utils.c \
+			utils/utils.c \
+			../gnl/get_next_line.c \
+			../gnl/get_next_line_utils.c
+
 OBJ_NAME = $(SRC_NAME:.c=.o)
+CHECKER_OBJ_NAME = $(CHECKER_SRCS:.c=.o)
 
 # Files
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+
+CHECKER_SRC = $(addprefix $(SRC_PATH)/, $(CHECKER_SRCS))
+CHECKER_OBJ = $(addprefix $(OBJ_PATH), $(CHECKER_OBJ_NAME))
 
 # Libft
 FT		= ./libft/
@@ -68,6 +91,7 @@ obj:
 	@mkdir -p $(OBJ_PATH)/elements
 	@mkdir -p $(OBJ_PATH)/sorting
 	@mkdir -p $(OBJ_PATH)/operations
+	@mkdir -p $(OBJ_PATH)/checker
 	@mkdir -p $(OBJ_PATH)/utils
 	@echo "$(SUCCESS)Objects folder created successfully$(NOC)"
 
@@ -84,10 +108,18 @@ $(NAME): $(OBJ)
 	@$(CC) $(OBJ) $(FT_LNK) -o $@
 	@echo "$(SUCCESS)$(NAME) built successfully!$(NOC)"
 
+$(CHECKER_NAME): $(CHECKER_OBJ)
+	@echo "$(INFO)Building $(CHECKER_NAME)...$(NOC)"
+	@$(CC) $(CHECKER_OBJ) $(FT_LNK) -o $@
+	@echo "$(SUCCESS)$(CHECKER_NAME) built successfully!$(NOC)"
+
 clean:
 	@echo "$(INFO)Deleting .o files...$(NOC)"
 	@rm -rf $(OBJ_PATH)
 	@echo "$(SUCCESS).o files deleted successfully!$(NOC)"
+	@echo "$(INFO)Deleting checker .o files...$(NOC)"
+	@rm -rf $(CHECKER_OBJ_PATH)
+	@echo "$(SUCCESS)Checker .o files deleted successfully!$(NOC)"
 	@echo "$(INFO)Deleting libft files..."
 	@make -C $(FT) clean
 	@echo "$(SUCCESS)Libft files deleted successfully!$(NOC)"

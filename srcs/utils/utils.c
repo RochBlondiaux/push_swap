@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 14:10:50 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/30 13:00:05 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/02 19:16:35 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,19 @@ void	print_stacks(t_element *stack_a, t_element *stack_b)
 			stack_b = stack_b->next;
 	}
 	ft_putstr_fd("_  _\na  b\n", 1);
+}
+
+int ft_strcmp(char *a, char *b)
+{
+	int	i;
+
+	if (ft_strlen(a) != ft_strlen(b))
+		return (0);
+	while (a[i])
+	{
+		if (a[i] != b[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }
