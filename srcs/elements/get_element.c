@@ -29,5 +29,5 @@ t_element	*get_element(t_element *lst, int index)
 
 t_element	*get_last_element(t_element *lst)
 {
-	return (get_element(lst, element_size(lst)));
+	return (get_element(lst, element_size(lst) - 1));
 }

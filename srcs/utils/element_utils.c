@@ -16,7 +16,7 @@ int	get_top(t_element *stack)
 {
 	if (!stack)
 		return (0);
-	return	(stack->value);
+	return (stack->value);
 }
 
 int get_bottom(t_element *stack)
