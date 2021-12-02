@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:52:31 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 14:33:17 by                  ###   ########.fr       */
+/*   Updated: 2021/12/02 14:48:38 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,21 @@ int    nb_of_rotates(t_element *a, int i)
 	return (moves);
 }
 
-void    get_closest_to_top(t_element *a, t_element *b, t_hold hold)
+void    get_closest_to_top(t_element **a, t_element *b, t_hold hold)
 {
 	int    nb_first_moves;
 	int    nb_scd_moves;
 
 	(void) b;
-	nb_first_moves = nb_of_rotates(a, hold.first_hold);
-	nb_scd_moves = nb_of_rotates(a, hold.second_hold);
+	nb_first_moves = nb_of_rotates(*a, hold.first_hold);
+	nb_scd_moves = nb_of_rotates(*a, hold.second_hold);
 	if (hold.first_hold == -1 && hold.second_hold == -1)
 		return ;
 	if (nb_first_moves < nb_scd_moves || hold.second_hold == -1)
 	{
 		while (nb_first_moves > 0)
 		{
-			rotate(&a, 'a');
+			rotate(a, 'a');
 			nb_first_moves --;
 		}
 	}
@@ -97,7 +97,7 @@ void    get_closest_to_top(t_element *a, t_element *b, t_hold hold)
 	{
 		while (nb_scd_moves > 0)
 		{
-			reverse_rotate(&a, 'a');
+			reverse_rotate(a, 'a');
 			nb_scd_moves --;
 		}
 	}
@@ -113,14 +113,16 @@ int        is_in_chunk(int a, t_chunk chunk)
 int    get_hold_element(t_element *a, int hold)
 {
 	int    i;
+	t_element *temp;
 
+	temp = a;
 	i = 0;
-	while (a)
+	while (temp)
 	{
-		if (a->value == hold)
+		if (temp->value == hold)
 			return (i);
 		i ++;
-		a = a->next;
+		temp = temp->next;
 	}
 	return (-1);
 }
@@ -161,7 +163,7 @@ void    sort_100(t_element **stack_a, t_element **stack_b)
 	chunk.min = 0;
 	chunk.max = 19;
 	hold = get_hold(*stack_a, chunk);
-	get_closest_to_top(*stack_a, *stack_b, hold);
+	get_closest_to_top(stack_a, *stack_b, hold);
 }
 
 void	sort_500(t_element **stack_a, t_element **stack_b)
