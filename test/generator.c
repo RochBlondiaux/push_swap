@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int	amount = 1000;
+	int	amount = 10;
 	FILE *fp;
 
 	fp = fopen("test.txt", "w+");
