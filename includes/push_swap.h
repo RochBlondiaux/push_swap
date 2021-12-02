@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 14:33:17 by                  ###   ########.fr       */
+/*   Updated: 2021/12/02 14:37:55 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,10 @@ void		parse(t_element **lst, char **args, int argc);
 void		exit_error(void);
 int			is_sorted(t_element *stack);
 void		print_stacks(t_element *stack_a, t_element *stack_b);
+t_hold	    get_hold(t_element *a, t_chunk chunk);
+int		    get_hold_element(t_element *a, int hold);
+int	        is_in_chunk(int a, t_chunk chunk);
+void		get_closest_to_top(t_element **a, t_element *b, t_hold hold);
+int			nb_of_rotates(t_element *a, int i);
 
 #endif
