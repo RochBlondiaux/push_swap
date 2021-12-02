@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 11:36:14 by                  ###   ########.fr       */
+/*   Updated: 2021/12/02 14:23:30 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 /**
  * Constants
  */
-# define DEBUG 1
+# define DEBUG 0
 
 /**
  * Structures
@@ -33,6 +33,16 @@ typedef struct s_element {
 	int					value;
 	struct s_element	*next;
 }						t_element;
+
+typedef struct s_chunk {
+	int    min;
+	int    max;
+}        t_chunk;
+
+typedef struct s_hold {
+	int    first_hold;
+	int    second_hold;
+}        t_hold;
 
 /**
  * Elements operations
