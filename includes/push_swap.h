@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 11:17:31 by                  ###   ########.fr       */
+/*   Updated: 2021/12/02 11:36:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void		element_iter(t_list *lst, void (*f)(int));
 t_element	*get_last_element(t_element *lst);
 int			get_top(t_element *stack);
 int			get_bottom(t_element *stack);
+int			get_lowest(t_element *stack);
+int 		get_bigger(t_element *stack);
 
 /**
  * Parsing
