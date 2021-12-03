@@ -51,5 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 push_swap
-checker
 push_swap_tester/
