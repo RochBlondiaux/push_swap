@@ -43,13 +43,100 @@ For detailed information, refer to the [**subject of this project**](https://git
 
 * [**📁 includes:**](includes/) contains all prototypes and libraries includes.
 * [**📁 srcs:**](srcs/) contains all project sources files.
-    * [**📁 libft:**](srcs/libft/) contains the libft project sources.
+    * [**📁 checker:**](srcs/checker/) contains all checker files.
+    * [**📁 elements:**](srcs/elements/) contains all elements files.
+    * [**📁 operations:**](srcs/operations/) contains all operations files.
+    * [**📁 parsing:**](srcs/parsing/) contains all parsing files.
+    * [**📁 sorting:**](srcs/sorting/) contains all sorting files.
     * [**📁 utils:**](srcs/utils/) contains all utilities files.
+* [**📁 libft:**](srcs/libft/) contains the libft project sources.
+* [**📁 gnl:**](srcs/gnl/) contains the gnl project sources.
 
 `@/srcs/main.c`
 * `main` - Start the program.
 
-`@/srcs/utils/`
+`@/srcs/checker/checker.c`
+* `main` - Start the program.
+* `handle_standard_input` - Reads standard input.
+* `dispatch_command` - Parses and executes commands from standard input.
+
+`@/srcs/elements/clear_elements.c`
+* `clear_elements` - Clear both stacks to avoid leaks at program exit.
+
+`@/srcs/elements/element_size.c`
+* `element_size` - Get stack length.
+
+`@/srcs/elements/get_element.c`
+* `get_element` - Get element from its index.
+
+`@/srcs/elements/new_element.c`
+* `new_element` - Create a new element.
+
+`@/srcs/operations/push.c`
+* `push_silently` - Push first element from a stack to another one without printing nothing.
+* `push` - Push first element from a stack to another one and print it.
+
+`@/srcs/operations/reverse_rotate.c`
+* `reverse_rotate_silently` - Reverse rotate an element silently.
+* `reverse_rotate` - Reverse rotate an element.
+* `reverse_rotate_both` - Reverse rotate an element on each stack.
+
+`@/srcs/operations/rotate.c`
+* `rotate_silently` - Rotate an element silently.
+* `rotate` - Rotate an element.
+* `rotate_both` - Rotate an element on each stack.
+
+`@/srcs/operations/swap.c`
+* `swap_silently` - Swap an element silently.
+* `swap` - Swap an element.
+* `swap_both` - Swap an element on each stack.
+
+`@/srcs/parsing/parser.c`
+* `check_data` - Validate linked list after parsing.
+* `strlen_` - Get the length of a pointer on string.
+* `contains_space` - Check if a string contains a space.
+* `create_new_element` - Create a new element and exit if it doesn't match requirements.
+* `parse` - Get linked list from string.
+
+`@/srcs/sorting/sort.c`
+* `sort_3` - Sort a linked list of 3 elements or fewer.
+* `sort_5` - Sort a linked list of 5 elements or fewer.
+* `sort_100` - Sort a linked list of 100 elements or fewer.
+* `sort_500` - Sort a linked list of 500 elements or fewer.
+* `sort` - Executes the right sort function depending on the list size.
+
+`@/srcs/utils/element_utils.c`
+* `get_top` - Get first element value of a linked list.
+* `get_bottom` - Get last element value of a linked list.
+* `get_bigger` - Get the bigger element of a linked list.
+* `get_lowest` - Get the lowest element of a linked list.
+
+`@/srcs/utils/sorting_utils.c`
+* `is_sorted` - Check if a linked list is sorted in ascending order.
+* `nb_of_rotates` - Calculates how many rotation are needed to move an element to a specified position.
+* `get_closest_to_top` - Put the smallest element on top of the list.
+* `is_in_chunk` - Check if an element is in chunk range.
+* `get_hold_element` - Get hold element in linked list.
+* `get_hold` - Get hold element in chunk.
+
+`@/srcs/utils/sorting_utils_1.c`
+* `good_sort` - Executes right functions to sort 5 random numbers.
+
+`@/srcs/utils/utils.c`
+* `exit_error` - Exits program with error.
+* `print_stacks` - Prints both stacks if debug mode is enabled. 
+* `ft_strcmp` - Compares two strings.
+
+`@/srcs/gnl/get_next_line`
+
+* `ft_read`	- read & wrap a buffer from a file descriptor.
+* `ft_read_next`	- concatenate last red buffer and latest one.
+* `ft_find_nl`	- cut line at the right length.
+* `get_next_line`	- main function.
+
+`@/srcs/gnl/get_next_line_utils.c`
+
+* `ft_strchr_` - find first occurrence of a character and return its index.
 
 `@/srcs/libft/`
 
