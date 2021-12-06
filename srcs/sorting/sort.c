@@ -47,10 +47,10 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 	if (get_top(*stack_b) < get_bottom(*stack_b))
 		swap(stack_b, 'b');
 	while ((get_top(*stack_b) < get_top(*stack_a)) && *stack_b)
-		push(stack_b, stack_a, 'b');
+		push(stack_b, stack_a, 'a');
 	while (get_top(*stack_b) > get_bottom(*stack_a))
 	{
-		push(stack_b, stack_a, 'b');
+		push(stack_b, stack_a, 'a');
 		while (!is_sorted(*stack_a))
 			rotate(stack_a, 'a');
 	}

@@ -61,9 +61,9 @@ void	handle_standard_input(t_element *stack_a, t_element *stack_b)
 		line = get_next_line(0);
 	}
 	if (!stack_b && stack_a && is_sorted(stack_a))
-		printf("O.K\n");
+		ft_putstr_fd("\033[1;32mO.K\n", 1);
 	else
-		printf("K.O\n");
+		ft_putstr_fd("\033[1;31mK.O\n", 1);
 }
 
 int	main(int argc, char **argv)
@@ -75,9 +75,7 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_b = NULL;
 	parse(&stack_a, argv, argc);
-	print_stacks(stack_a, stack_b);
 	handle_standard_input(stack_a, stack_b);
-	print_stacks(stack_a, stack_b);
 	clear_elements(&stack_a, &stack_b);
 	return (0);
 }
