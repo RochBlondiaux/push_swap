@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 13:22:43 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 18:13:24 by                  ###   ########.fr       */
+/*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
+/*   Updated: 2021/12/06 18:36:39 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 /**
  * Constants
  */
-# define DEBUG 0
+# define DEBUG 1
 
 /**
  * Structures
@@ -85,19 +85,15 @@ void		parse(t_element **lst, char **args, int argc);
 /**
  * Sorting
  */
-void		good_sort(t_element **stack_a, t_element **stack_b);
+void		nicest_5sort(t_element **stack_a, t_element **stack_b);
 void		sort(t_element **stack_a, t_element **stack_b);
+
 /**
  * Utils
  */
 void		exit_error(void);
 int			is_sorted(t_element *stack);
 void		print_stacks(t_element *stack_a, t_element *stack_b);
-t_hold		get_hold(t_element *a, t_chunk chunk);
-int			get_hold_element(t_element *a, int hold);
-int			is_in_chunk(int a, t_chunk chunk);
-void		get_closest_to_top(t_element **a, t_element *b, t_hold hold);
-int			nb_of_rotates(t_element *a, int i);
 int			ft_strcmp(char *a, char *b);
 
 #endif

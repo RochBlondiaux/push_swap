@@ -113,14 +113,7 @@ For detailed information, refer to the [**subject of this project**](https://git
 
 `@/srcs/utils/sorting_utils.c`
 * `is_sorted` - Check if a linked list is sorted in ascending order.
-* `nb_of_rotates` - Calculates how many rotation are needed to move an element to a specified position.
-* `get_closest_to_top` - Put the smallest element on top of the list.
-* `is_in_chunk` - Check if an element is in chunk range.
-* `get_hold_element` - Get hold element in linked list.
-* `get_hold` - Get hold element in chunk.
-
-`@/srcs/utils/sorting_utils_1.c`
-* `good_sort` - Executes right functions to sort 5 random numbers.
+* `nicest_5sort` - Executes right functions to sort 5 random numbers.
 
 `@/srcs/utils/utils.c`
 * `exit_error` - Exits program with error.

@@ -39,7 +39,6 @@ SRC_NAME = main.c \
 			operations/reverse_rotate.c \
 			sorting/sort.c \
 			utils/sorting_utils.c \
-			utils/sorting_utils_1.c \
 			utils/element_utils.c \
 			utils/utils.c
 
@@ -55,7 +54,6 @@ CHECKER_SRCS = checker/checker.c \
 			operations/reverse_rotate.c \
 			sorting/sort.c \
 			utils/sorting_utils.c \
-			utils/sorting_utils_1.c \
 			utils/element_utils.c \
 			utils/utils.c \
 			../gnl/get_next_line.c \

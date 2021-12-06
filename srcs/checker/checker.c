@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c		                                    :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 11:19:19 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/30 11:19:20 by rblondia         ###   ########.fr       */
+/*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
+/*   Updated: 2021/12/06 18:36:39 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+# include "../../includes/push_swap.h"
 
 void	dispatch_command(char *cmd, t_element **stack_a, t_element **stack_b)
 {

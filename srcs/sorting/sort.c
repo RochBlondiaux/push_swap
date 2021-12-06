@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 17:52:31 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/02 16:39:46 by                  ###   ########.fr       */
+/*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
+/*   Updated: 2021/12/06 19:19:36 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,13 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 			rotate(stack_a, 'a');
 	}
 	if (*stack_b)
-		good_sort(stack_a, stack_b);
+		nicest_5sort(stack_a, stack_b);
 }
 
 void	sort_100(t_element **stack_a, t_element **stack_b)
 {
-	t_chunk	chunk;
-	t_hold	hold;
-
-	chunk.min = 0;
-	chunk.max = 19;
-	hold = get_hold(*stack_a, chunk);
-	get_closest_to_top(stack_a, *stack_b, hold);
+	(void) stack_a;
+	(void) stack_b;
 }
 
 void	sort_500(t_element **stack_a, t_element **stack_b)
