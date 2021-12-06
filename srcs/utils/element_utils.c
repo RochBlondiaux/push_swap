@@ -19,14 +19,14 @@ int	get_top(t_element *stack)
 	return (stack->value);
 }
 
-int get_bottom(t_element *stack)
+int	get_bottom(t_element *stack)
 {
 	if (!stack)
 		return (0);
 	return (get_last_element(stack)->value);
 }
 
-int get_bigger(t_element *stack)
+int	get_bigger(t_element *stack)
 {
 	int	bigger;
 
@@ -40,7 +40,7 @@ int get_bigger(t_element *stack)
 	return (bigger);
 }
 
-int get_lowest(t_element *stack)
+int	get_lowest(t_element *stack)
 {
 	int	lowest;
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c		                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 11:19:19 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/30 11:19:20 by rblondia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	dispatch_command(char *cmd, t_element **stack_a, t_element **stack_b)
@@ -37,7 +49,7 @@ void	dispatch_command(char *cmd, t_element **stack_a, t_element **stack_b)
 		exit_error();
 }
 
-void handle_standard_input(t_element *stack_a, t_element *stack_b)
+void	handle_standard_input(t_element *stack_a, t_element *stack_b)
 {
 	char		*line;
 
@@ -54,7 +66,7 @@ void handle_standard_input(t_element *stack_a, t_element *stack_b)
 		printf("K.O\n");
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_element	*stack_a;
 	t_element	*stack_b;

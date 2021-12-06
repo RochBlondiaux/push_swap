@@ -28,9 +28,9 @@ int	is_sorted(t_element *stack)
 	return (1);
 }
 
-int    nb_of_rotates(t_element *a, int i)
+int	nb_of_rotates(t_element *a, int i)
 {
-	int moves;
+	int	moves;
 
 	moves = 0;
 	if (i <= (int) element_size(a) / 2)
@@ -40,10 +40,10 @@ int    nb_of_rotates(t_element *a, int i)
 	return (moves);
 }
 
-void    get_closest_to_top(t_element **a, t_element *b, t_hold hold)
+void	get_closest_to_top(t_element **a, t_element *b, t_hold hold)
 {
-	int    nb_first_moves;
-	int    nb_scd_moves;
+	int	nb_first_moves;
+	int	nb_scd_moves;
 
 	(void) b;
 	nb_first_moves = nb_of_rotates(*a, hold.first_hold);
@@ -68,17 +68,17 @@ void    get_closest_to_top(t_element **a, t_element *b, t_hold hold)
 	}
 }
 
-int        is_in_chunk(int a, t_chunk chunk)
+int	is_in_chunk(int a, t_chunk chunk)
 {
 	if (a >= chunk.min && a <= chunk.max)
 		return (1);
 	return (0);
 }
 
-int    get_hold_element(t_element *a, int hold)
+int	get_hold_element(t_element *a, int hold)
 {
-	int    i;
-	t_element *temp;
+	int			i;
+	t_element	*temp;
 
 	temp = a;
 	i = 0;
@@ -90,32 +90,4 @@ int    get_hold_element(t_element *a, int hold)
 		temp = temp->next;
 	}
 	return (-1);
-}
-
-t_hold    get_hold(t_element *a, t_chunk chunk)
-{
-	t_hold    hold;
-	t_element    *temp;
-	int        check;
-
-	check = 0;
-	hold.first_hold = -1;
-	hold.second_hold = -1;
-	temp = (a);
-	while (temp && check != 2)
-	{
-		if (is_in_chunk(temp->value, chunk) && check == 0)
-		{
-			hold.first_hold = get_hold_element((a), temp->value);
-			check = 1;
-			temp = temp->next;
-		}
-		if (is_in_chunk(temp->value, chunk) && check == 1)
-		{
-			hold.second_hold = get_hold_element(a, temp->value);
-			check = 2;
-		}
-		temp = temp->next;
-	}
-	return (hold);
 }

@@ -26,7 +26,7 @@
 /**
  * Constants
  */
-# define DEBUG 0
+# define DEBUG 1
 
 /**
  * Structures
@@ -36,15 +36,16 @@ typedef struct s_element {
 	struct s_element	*next;
 }						t_element;
 
-typedef struct s_chunk {
-	int    min;
-	int    max;
-}        t_chunk;
+typedef struct s_chunk
+{
+	int	min;
+	int	max;
+}		t_chunk;
 
 typedef struct s_hold {
-	int    first_hold;
-	int    second_hold;
-}        t_hold;
+	int	first_hold;
+	int	second_hold;
+}		t_hold;
 
 /**
  * Elements operations
@@ -74,7 +75,7 @@ t_element	*get_last_element(t_element *lst);
 int			get_top(t_element *stack);
 int			get_bottom(t_element *stack);
 int			get_lowest(t_element *stack);
-int 		get_bigger(t_element *stack);
+int			get_bigger(t_element *stack);
 
 /**
  * Parsing
@@ -92,9 +93,9 @@ void		sort(t_element **stack_a, t_element **stack_b);
 void		exit_error(void);
 int			is_sorted(t_element *stack);
 void		print_stacks(t_element *stack_a, t_element *stack_b);
-t_hold	    get_hold(t_element *a, t_chunk chunk);
-int		    get_hold_element(t_element *a, int hold);
-int	        is_in_chunk(int a, t_chunk chunk);
+t_hold		get_hold(t_element *a, t_chunk chunk);
+int			get_hold_element(t_element *a, int hold);
+int			is_in_chunk(int a, t_chunk chunk);
 void		get_closest_to_top(t_element **a, t_element *b, t_hold hold);
 int			nb_of_rotates(t_element *a, int i);
 int			ft_strcmp(char *a, char *b);

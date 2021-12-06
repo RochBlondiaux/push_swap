@@ -46,7 +46,6 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 	sort_3(stack_a);
 	if (get_top(*stack_b) < get_bottom(*stack_b))
 		swap(stack_b, 'b');
-
 	while ((get_top(*stack_b) < get_top(*stack_a)) && *stack_b)
 		push(stack_b, stack_a, 'b');
 	while (get_top(*stack_b) > get_bottom(*stack_a))
@@ -59,10 +58,10 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 		good_sort(stack_a, stack_b);
 }
 
-void    sort_100(t_element **stack_a, t_element **stack_b)
+void	sort_100(t_element **stack_a, t_element **stack_b)
 {
-	t_chunk    chunk;
-	t_hold    hold;
+	t_chunk	chunk;
+	t_hold	hold;
 
 	chunk.min = 0;
 	chunk.max = 19;

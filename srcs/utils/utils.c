@@ -46,10 +46,11 @@ void	print_stacks(t_element *stack_a, t_element *stack_b)
 	ft_putstr_fd("_  _\na  b\n", 1);
 }
 
-int ft_strcmp(char *a, char *b)
+int	ft_strcmp(char *a, char *b)
 {
 	int	i;
 
+	i = 0;
 	if (ft_strlen(a) != ft_strlen(b))
 		return (0);
 	while (a[i])
