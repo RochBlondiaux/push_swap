@@ -2,8 +2,13 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/42" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/42-push_swap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/42-push_swap/libft" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ft_printf" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libft" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/push-swap" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/push_swap_tester" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pushswap" vcs="Git" />
   </component>
 </project>

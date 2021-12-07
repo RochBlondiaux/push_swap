@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/06 18:36:39 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/07 14:50:47 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 /**
  * Constants
  */
-# define DEBUG 1
+# define DEBUG 0
 
 /**
  * Structures
@@ -83,6 +83,12 @@ int			get_bigger(t_element *stack);
 void		parse(t_element **lst, char **args, int argc);
 
 /**
+ * Chunks
+ */
+int			is_in_chunk(int a, t_chunk chunk);
+int			hold_to_top_moves_len(int hold_pos, int stack_size);
+
+/**
  * Sorting
  */
 void		nicest_5sort(t_element **stack_a, t_element **stack_b);
@@ -95,5 +101,6 @@ void		exit_error(void);
 int			is_sorted(t_element *stack);
 void		print_stacks(t_element *stack_a, t_element *stack_b);
 int			ft_strcmp(char *a, char *b);
+void		move(t_element **a, char name, void (*f)(t_element **, char), int c);
 
 #endif

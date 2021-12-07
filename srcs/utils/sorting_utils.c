@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:38 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/06 18:36:38 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/06 21:38:31 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,16 @@ void	nicest_5sort(t_element **stack_a, t_element **stack_b)
 	}
 	if (get_top(*stack_a) > get_element(*stack_a, 1)->value)
 		swap(stack_a, 'a');
+}
+
+void	move(t_element **a, char name, void (*f)(t_element **, char), int c)
+{
+	int	i;
+
+	i = 0;
+	while (i < c)
+	{
+		f(a, name);
+		i++;
+	}
 }

@@ -38,6 +38,7 @@ SRC_NAME = main.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c \
 			sorting/sort.c \
+			utils/chunk_utils.c \
 			utils/sorting_utils.c \
 			utils/element_utils.c \
 			utils/utils.c

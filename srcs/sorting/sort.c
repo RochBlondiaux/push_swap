@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/06 19:19:36 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:53:28 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,31 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 		nicest_5sort(stack_a, stack_b);
 }
 
-void	sort_100(t_element **stack_a, t_element **stack_b)
+void	sort_bigger(t_element **stack_a, t_element **stack_b)
 {
-	(void) stack_a;
-	(void) stack_b;
-}
+	size_t		length;
+	size_t		i;
+	size_t		j;
+	int			k;
 
-void	sort_500(t_element **stack_a, t_element **stack_b)
-{
-	(void) stack_a;
-	(void) stack_b;
+	length = element_size(*stack_a);
+	i = 0;
+	while (is_sorted(*stack_a) == 0)
+	{
+		j = 0;
+		while (j < length)
+		{
+			k = (*stack_a)->value >> i;
+			if ((k & 1) == 1)
+				rotate(stack_a, 'a');
+			else
+				push(stack_a, stack_b, 'b');
+			j++;
+		}
+		while ((*stack_b))
+			push(stack_b, stack_a, 'a');
+		i++;
+	}
 }
 
 void	sort(t_element **stack_a, t_element **stack_b)
@@ -81,8 +96,6 @@ void	sort(t_element **stack_a, t_element **stack_b)
 		sort_3(stack_a);
 	else if (length <= 5)
 		sort_5(stack_a, stack_b);
-	else if (length <= 100)
-		sort_100(stack_a, stack_b);
-	else if (length <= 500)
-		sort_500(stack_a, stack_b);
+	else
+		sort_bigger(stack_a, stack_b);
 }
