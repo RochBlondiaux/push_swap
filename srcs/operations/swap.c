@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:38 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/06 18:36:38 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/08 14:52:37 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ void	swap_both(t_element **stack_a, t_element **stack_b)
 {
 	swap_silently(stack_a);
 	swap_silently(stack_b);
-	ft_putstr_fd("ss", 1);
-	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("ss\n", 1);
 }

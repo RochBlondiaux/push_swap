@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/07 14:50:47 by null             ###   ########.fr       */
+/*   Updated: 2021/12/08 15:17:57 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 /**
  * Constants
  */
-# define DEBUG 0
+# define DEBUG 1
 
 /**
  * Structures
@@ -101,6 +101,5 @@ void		exit_error(void);
 int			is_sorted(t_element *stack);
 void		print_stacks(t_element *stack_a, t_element *stack_b);
 int			ft_strcmp(char *a, char *b);
-void		move(t_element **a, char name, void (*f)(t_element **, char), int c);
 
 #endif

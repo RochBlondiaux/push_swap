@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/07 15:53:28 by null             ###   ########.fr       */
+/*   Updated: 2021/12/08 16:07:33 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,21 @@ void	sort_3(t_element **stack_a)
 		reverse_rotate(stack_a, 'a');
 }
 
+void	move_opti_b(t_element **a, t_element **b)
+{
+	if (!is_sorted(*a) && (get_top(*b) < get_element(*b, 1)->value))
+		swap_both(a, b);
+	else
+		swap(b, 'b');
+}
+
 void	sort_5(t_element **stack_a, t_element **stack_b)
 {
 	push(stack_a, stack_b, 'b');
 	push(stack_a, stack_b, 'b');
-	sort_3(stack_a);
 	if (get_top(*stack_b) < get_bottom(*stack_b))
-		swap(stack_b, 'b');
+		move_opti_b(stack_a, stack_b);
+	sort_3(stack_a);
 	while ((get_top(*stack_b) < get_top(*stack_a)) && *stack_b)
 		push(stack_b, stack_a, 'a');
 	while (get_top(*stack_b) > get_bottom(*stack_a))
