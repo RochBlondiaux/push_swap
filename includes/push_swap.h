@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 15:17:57 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/08 17:18:59 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 /**
  * Constants
  */
-# define DEBUG 1
+# define DEBUG 0
 
 /**
  * Structures
@@ -76,6 +76,7 @@ int			get_top(t_element *stack);
 int			get_bottom(t_element *stack);
 int			get_lowest(t_element *stack);
 int			get_bigger(t_element *stack);
+t_element	*copy_stack(t_element *stack);
 
 /**
  * Parsing
@@ -93,6 +94,7 @@ int			hold_to_top_moves_len(int hold_pos, int stack_size);
  */
 void		nicest_5sort(t_element **stack_a, t_element **stack_b);
 void		sort(t_element **stack_a, t_element **stack_b);
+void		rotate_or_reverse(t_element **src, char stack_name);
 
 /**
  * Utils

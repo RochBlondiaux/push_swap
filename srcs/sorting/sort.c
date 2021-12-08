@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 16:07:33 by rblondia         ###   ########.fr       */
+/*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
+/*   Updated: 2021/12/08 17:24:35 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,12 @@ void	sort_5(t_element **stack_a, t_element **stack_b)
 	{
 		push(stack_b, stack_a, 'a');
 		while (!is_sorted(*stack_a))
-			rotate(stack_a, 'a');
+			reverse_rotate(stack_a, 'a');
 	}
 	if (*stack_b)
 		nicest_5sort(stack_a, stack_b);
+	while (!is_sorted(*stack_a))
+		reverse_rotate(stack_a, 'a');
 }
 
 void	sort_bigger(t_element **stack_a, t_element **stack_b)
@@ -75,7 +77,7 @@ void	sort_bigger(t_element **stack_a, t_element **stack_b)
 
 	length = element_size(*stack_a);
 	i = 0;
-	while (is_sorted(*stack_a) == 0)
+	while (!is_sorted(*stack_a))
 	{
 		j = 0;
 		while (j < length)

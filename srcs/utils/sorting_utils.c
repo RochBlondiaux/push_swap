@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 18:36:38 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 15:29:29 by rblondia         ###   ########.fr       */
+/*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
+/*   Updated: 2021/12/08 17:26:43 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	nicest_5sort(t_element **stack_a, t_element **stack_b)
 		&& get_top(*stack_b) < get_bottom(*stack_a))
 	{
 		while (!is_sorted(*stack_a))
-			reverse_rotate(stack_a, 'a');
+			rotate(stack_a, 'a');
 		push(stack_b, stack_a, 'a');
 	}
 	if ((get_top(*stack_b) < get_top(*stack_a))
