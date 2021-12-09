@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 17:24:35 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/09 12:39:51 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	sort_bigger(t_element **stack_a, t_element **stack_b)
 
 	length = element_size(*stack_a);
 	i = 0;
+	pre_sort(stack_a);
 	while (!is_sorted(*stack_a))
 	{
 		j = 0;
@@ -102,7 +103,12 @@ void	sort(t_element **stack_a, t_element **stack_b)
 	length = element_size(*stack_a);
 	if (is_sorted(*stack_a))
 		return ;
-	if (length <= 3)
+	if (length == 2)
+	{
+		if(!is_sorted(*stack_a))
+			swap(stack_a, 'a');
+	}
+	else if (length == 3)
 		sort_3(stack_a);
 	else if (length <= 5)
 		sort_5(stack_a, stack_b);

@@ -38,6 +38,7 @@ SRC_NAME = main.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c \
 			sorting/sort.c \
+			sorting/pre_sort.c \
 			utils/sorting_utils.c \
 			utils/element_utils.c \
 			utils/utils.c
@@ -53,6 +54,7 @@ CHECKER_SRCS = checker/checker.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c \
 			sorting/sort.c \
+			sorting/pre_sort.c \
 			utils/sorting_utils.c \
 			utils/element_utils.c \
 			utils/utils.c \

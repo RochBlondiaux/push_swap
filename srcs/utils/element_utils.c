@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 14:52:37 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/08 22:21:54 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ int	get_bigger(t_element *stack)
 	return (bigger);
 }
 
-int	get_lowest(t_element *stack)
+t_element *get_lowest(t_element *stack)
 {
-	int	lowest;
+	t_element	*tmp;
 
-	lowest = 0;
+	tmp = stack;
 	while (stack)
 	{
-		if (stack->value < lowest)
-			lowest = stack->value;
+		if (stack->value < tmp->value)
+			tmp = stack;
 		stack = stack->next;
 	}
-	return (lowest);
+	return (tmp);
 }

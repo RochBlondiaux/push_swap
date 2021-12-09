@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 16:28:43 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/12/08 22:21:54 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,22 @@ void	dispatch_command(char *cmd, t_element **stack_a, t_element **stack_b)
 		rotate_silently(stack_a);
 	else if (ft_strcmp(cmd, "rb\n"))
 		rotate_silently(stack_b);
+	if (ft_strcmp(cmd, "rr\n"))
+	{
+		rotate_silently(stack_a);
+		rotate_silently(stack_b);
+	}
+	else if (ft_strcmp(cmd, "rra\n"))
+		reverse_rotate_silently(stack_a);
+	else if (ft_strcmp(cmd, "rrb\n"))
+		reverse_rotate_silently(stack_b);
+	else if (ft_strcmp(cmd, "rrr\n"))
+	{
+		reverse_rotate_silently(stack_a);
+		reverse_rotate_silently(stack_b);
+	}
 	else
-		dispatch_command_1(cmd, stack_a, stack_b);
+		exit_error();
 }
 
 void	handle_standard_input(t_element *stack_a, t_element *stack_b)
