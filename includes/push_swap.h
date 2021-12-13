@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:36:39 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/09 12:45:49 by null             ###   ########.fr       */
+/*   Updated: 2021/12/13 12:53:32 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,11 @@ void		pre_sort(t_element **stack);
 void		nicest_5sort(t_element **stack_a, t_element **stack_b);
 void		sort(t_element **stack_a, t_element **stack_b);
 void		rotate_or_reverse(t_element **src, char stack_name);
+void		get_lowest_top(t_element **a, int index, int i);
+int			find_next_index(t_element **stack, int previous);
+void		give_index(t_element *tmp, t_element **stack);
+t_element	*get_by_index(t_element *stack, int index);
+t_element	*get_by_value(t_element *stack, int value);
 
 /**
  * Utils

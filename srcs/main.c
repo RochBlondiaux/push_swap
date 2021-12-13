@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/09 11:25:59 by null             ###   ########.fr       */
+/*   Updated: 2021/12/13 12:42:54 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	parse(&stack_a, argv, argc);
 	print_stacks(stack_a, stack_b);
-	//pre_sort(&stack_a);
 	sort(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 	clear_elements(&stack_a, &stack_b);

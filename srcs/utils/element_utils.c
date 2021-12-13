@@ -40,7 +40,7 @@ int	get_bigger(t_element *stack)
 	return (bigger);
 }
 
-t_element *get_lowest(t_element *stack)
+t_element	*get_lowest(t_element *stack)
 {
 	t_element	*tmp;
 

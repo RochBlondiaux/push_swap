@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/09 12:39:51 by null             ###   ########.fr       */
+/*   Updated: 2021/12/13 12:44:03 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,47 @@ void	sort_3(t_element **stack_a)
 		reverse_rotate(stack_a, 'a');
 }
 
-void	move_opti_b(t_element **a, t_element **b)
+static void	move_opti(t_element **a, int i)
 {
-	if (!is_sorted(*a) && (get_top(*b) < get_element(*b, 1)->value))
-		swap_both(a, b);
-	else
-		swap(b, 'b');
+	int			lowest;
+	t_element	*tmp;
+	int			index;
+
+	tmp = (*a);
+	index = 0;
+	lowest = get_lowest(*a)->value;
+	while (tmp)
+	{
+		if (tmp->value == lowest)
+			break ;
+		index ++;
+		tmp = tmp->next;
+	}
+	get_lowest_top(a, index, i);
 }
 
-void	sort_5(t_element **stack_a, t_element **stack_b)
+void	sort_5(t_element **a, t_element **b)
 {
-	push(stack_a, stack_b, 'b');
-	push(stack_a, stack_b, 'b');
-	if (get_top(*stack_b) < get_bottom(*stack_b))
-		move_opti_b(stack_a, stack_b);
-	sort_3(stack_a);
-	while ((get_top(*stack_b) < get_top(*stack_a)) && *stack_b)
-		push(stack_b, stack_a, 'a');
-	while (get_top(*stack_b) > get_bottom(*stack_a))
+	pre_sort(a);
+	if (element_size(*a) == 5)
 	{
-		push(stack_b, stack_a, 'a');
-		while (!is_sorted(*stack_a))
-			reverse_rotate(stack_a, 'a');
+		move_opti(a, 0);
+		push(a, b, 'b');
+		move_opti(a, 1);
+		push(a, b, 'b');
+		sort_3(a);
+		push(b, a, 'a');
+		push(b, a, 'a');
+		if (!is_sorted(*a))
+			rotate(a, 'a');
 	}
-	if (*stack_b)
-		nicest_5sort(stack_a, stack_b);
-	while (!is_sorted(*stack_a))
-		reverse_rotate(stack_a, 'a');
+	else
+	{
+		move_opti(a, 0);
+		push(a, b, 'b');
+		sort_3(a);
+		push(b, a, 'a');
+	}
 }
 
 void	sort_bigger(t_element **stack_a, t_element **stack_b)
@@ -104,10 +118,7 @@ void	sort(t_element **stack_a, t_element **stack_b)
 	if (is_sorted(*stack_a))
 		return ;
 	if (length == 2)
-	{
-		if(!is_sorted(*stack_a))
-			swap(stack_a, 'a');
-	}
+		swap(stack_a, 'a');
 	else if (length == 3)
 		sort_3(stack_a);
 	else if (length <= 5)

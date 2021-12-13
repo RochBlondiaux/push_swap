@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 22:21:54 by null             ###   ########.fr       */
+/*   Updated: 2021/12/13 12:45:20 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,32 @@ int	ft_strcmp(char *a, char *b)
 		i++;
 	}
 	return (1);
+}
+
+void	get_lowest_top(t_element **a, int index, int i)
+{
+	if (index == 0)
+		return ;
+	else if (index == 1)
+	{
+		rotate(a, 'a');
+		return ;
+	}
+	else if (index == 2)
+	{
+		rotate(a, 'a');
+		rotate(a, 'a');
+		return ;
+	}
+	else if (index == 3 - i)
+	{
+		reverse_rotate(a, 'a');
+		reverse_rotate(a, 'a');
+		return ;
+	}
+	if (index == 4 - i)
+	{
+		reverse_rotate(a, 'a');
+		return ;
+	}
 }
