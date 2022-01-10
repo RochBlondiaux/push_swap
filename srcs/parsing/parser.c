@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:08:53 by rblondia          #+#    #+#             */
-/*   Updated: 2021/12/08 22:21:54 by null             ###   ########.fr       */
+/*   Updated: 2022/01/10 10:50:18 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ void	create_new_element(char *a, t_element **lst)
 	int	tmp;
 
 	if (!a || !a[0])
-		exit(-1);
+		exit_error();
 	tmp = ft_atoi(a);
-	if (tmp == 0 && (a[0] != '0'))
+	if (tmp == -1 && a[0] != '-')
 		exit_error();
 	*lst = new_element(tmp, *lst);
 }
